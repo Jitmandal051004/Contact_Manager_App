@@ -13,8 +13,10 @@ const registerUser = asyncHandler(async (req, res) => {
     const userAvailable = await User.findOne({ email });
     if(userAvailable){
         res.status(400);
-        throw new Error("User already registered")
+        throw new Error("User already registered!!");
     }
+
+    
     res.json({message: "Register the user"})
 })
 
